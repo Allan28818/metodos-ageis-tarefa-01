@@ -16,11 +16,22 @@
 }
 body {
   background: #e9e9e9;
+  background-image: url('public/background.png');
+  background-size: cover;
+  background-attachment: fixed; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh; 
+  margin: 0; 
+  max-width: 100vh;
+
 }
 a {
   color: var(--color-secondary);
   text-decoration: none;
   cursor: pointer;
+  font-weight: 500;
 }
 a:hover {
   color: var(--color-primary);
@@ -30,7 +41,7 @@ h1 {
   text-align: center;
 }
 .container {
-  margin: auto;
+  
   max-width: 600px;
   background: white;
   padding: 16px 8px;
@@ -40,4 +51,42 @@ h1 {
 .container form {
   display: flex;
   flex-direction: column;
+}
+input {
+  background-color: #f7f9fb;
+  border: 1px solid #00000026;
+  padding: 0px 17px;
+  height: 45px;
+  border-radius: 8px;
+  margin: 0px;
+}
+.container form p {
+  margin: 25px 0px 0px 0px;
+}
+
+button {
+  height: 45px;
+  border-radius: 8px;
+  angle: 0 deg;
+  opacity: 1;
+  border-radius: 8px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 15px 0px 0px 0px;
+  font-weight: 700;
+}
+
+button:hover {
+  background-color: var(--color-secondary);
+}
+
+.footer {
+  color: rgba(0, 0, 0, 0.32);
+  font-size: 12px;
+  text-align: center;
+  font-weight: 500;
+  line-height: 45px; 
+  letter-spacing: 0.36px;
 }
