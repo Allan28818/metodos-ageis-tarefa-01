@@ -30,6 +30,9 @@ function Login() {
         <p>
           Não tem uma conta? <a href="#">Cadastre-se</a>
         </p>
+        <p className="footer">
+          © 2025 Equipe A - Métodos Ágeis — Todos os direitos reservados
+        </p>
       </div>
     </>
   );
