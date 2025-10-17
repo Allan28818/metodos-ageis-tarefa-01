@@ -1,5 +1,7 @@
 import express from 'express'
 
+import pool from './database/connection.js'
+
 // Rotas
 import userRoutes from './routes/user.routes.js'
 import authRoutes from './routes/auth.routes.js'

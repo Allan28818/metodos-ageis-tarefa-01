@@ -1,6 +1,7 @@
-import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
 dotenv.config()
+
+import jwt from 'jsonwebtoken'
 
 class AuthService{
     generateToken = async (id) => {
