@@ -1,13 +1,10 @@
+import pool from '../database/connection.js'
+
 class UserService{
     getByEmail = async (email) => {
-        if(email != "teste@a.ucb.br"){
-            return []
-        }
-        return [{
-            id: 1,
-            email: 'teste@a.ucb.br',
-            password: '123456'
-        }, {}]
+        const query = 'SELECT matricula, email, senha_usuario FROM usuario WHERE email = ?'
+        const [result] = await pool.query(query, [email])
+        return result
     }
 }
 

@@ -8,7 +8,7 @@
   "main": "./src/server.js",
   "scripts": {
     "start": "node .",
-    "dev:start": "nodemon ."
+    "dev": "nodemon ."
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
