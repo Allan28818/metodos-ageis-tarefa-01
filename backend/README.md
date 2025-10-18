@@ -13,7 +13,7 @@ Valores aceitaveis:
 - DB_USER: Especifica o user para login no MySql. Se não colocado, será por padrão root (Opcional)
 - DB_PASSWORD: Especifica a senha para login no MySql.
 - DB_DATABASE_NAME: Especifica o nome do Database usado na aplicação. Por padrão será "dbEmprestimoLivro" (Opcional)
-- SECRET_JWT: Uma string utilizada para criptografar carimbar tokens jwt
+- SECRET_JWT: Uma string utilizada para criptografar e carimbar tokens jwt
 
 ### Rodando
 
