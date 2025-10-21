@@ -1,9 +1,10 @@
+import express from 'express'
 import authRouter from './auth.routes.js'
 import userRouter from './user.routes.js'
 
-export default {
-    attach(app){
-        app.use('/auth', authRouter)
-        app.use('/usuario', userRouter)
-    }
-}
+const router = express.Router()
+
+router.use('/auth', authRouter)
+router.use('/usuario', userRouter)
+
+export default router
