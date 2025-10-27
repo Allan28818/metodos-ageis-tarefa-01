@@ -8,20 +8,32 @@
   "main": "./src/server.js",
   "scripts": {
     "start": "node .",
-    "dev": "nodemon ."
+    "dev": "nodemon .",
+    "test": "cucumber-js",
+    "test:registro": "cucumber-js features/01_registro_usuario.feature",
+    "test:login": "cucumber-js features/02_login_autenticacao.feature",
+    "test:jwt": "cucumber-js features/03_token_jwt.feature",
+    "test:senha": "cucumber-js features/04_seguranca_senhas.feature",
+    "test:validacoes": "cucumber-js features/05_validacoes_erros.feature",
+    "test:database": "cucumber-js features/06_operacoes_banco_dados.feature",
+    "test:seguranca": "cucumber-js --tags @seguranca"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
-    "dotenv": "^17.2.3",
     "express": "^5.1.0",
-    "jsonwebtoken": "^9.0.2",
-    "mysql2": "^3.15.2",
     "nodemailer": "^7.0.6"
   },
   "devDependencies": {
+    "@cucumber/cucumber": "^12.2.0",
     "@eslint/js": "^9.37.0",
+    "bcryptjs": "^3.0.2",
+    "chai": "^6.2.0",
+    "chai-http": "^5.1.2",
+    "dotenv": "^17.2.3",
     "eslint": "^9.37.0",
     "globals": "^16.4.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.15.3",
     "nodemon": "^3.1.10"
   }
 }
