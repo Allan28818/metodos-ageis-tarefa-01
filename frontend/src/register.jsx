@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { storageHelper } from "./userFunctions.js";
 import { useNavigate } from "react-router-dom";
 import "./index.css";
+import "./authpages.css"
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -28,7 +29,13 @@ function Register() {
         navigate("/login");
     }
 };
-
+useEffect(()=>{
+     document.body.style.backgroundImage = "url('/background.png')";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundAttachment = "fixed";
+})
   return (
     <div className={"authPages"}>
       <div className="container">

@@ -1,9 +1,4 @@
-body > div.authPages {
 
-  background-image: url('background.png');
-  background-size: cover;
-  background-attachment: fixed;
-}
 div#root {
   width: 100%;
   height: 100%;

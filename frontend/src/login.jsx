@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { storageHelper } from "./userFunctions.js";
 import { useNavigate } from "react-router-dom";
 import "./authpages.css"
@@ -16,11 +16,18 @@ function Login() {
       
       storageHelper.saveSession(user);
       // Redirecionar ou atualizar a interface conforme necessário
-      navigate("/home");
+      navigate("/");
     } else {
       alert("Email ou senha incorretos.");
     }
   };
+  useEffect(()=>{
+       document.body.style.backgroundImage = "url('/background.png')";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundPosition = "center";
+      document.body.style.backgroundRepeat = "no-repeat";
+      document.body.style.backgroundAttachment = "fixed";
+  })
 
   return (
     <div className={"authPages"}>

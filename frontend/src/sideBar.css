@@ -1,0 +1,84 @@
+.sidebar {
+      width: 280px;
+      height: 100vh;
+      background: white;
+      box-shadow: 1px 1px 10px #00000017;
+      display: flex;
+      flex-Direction: column;
+      position: absolute;
+      margin: 0;
+      padding: 15px;
+      top: -15px;
+      left:-16px;
+      border-radius: 0 15px 15px;
+
+    }
+    header {
+      padding: 24px 20px;
+      border-bottom: 1px solid #e5e7eb
+    }
+    logo img {
+      width: 100%;
+    }
+    logoIcon {
+      width: 32px;
+      height: 32px;
+      background: #14b8a6;
+      borderRadius: 4px;
+      display: flex;
+      alignItems: center;
+      justifyContent: center;
+      color: white;
+      fontSize: 20px;
+      fontWeight: bold
+    }
+    nav{
+      flex: 1;
+      padding: 16px 0;
+      overflowY: auto
+    }
+    .sidebar nav button{
+        display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 24px;
+      color: var(--color-primary);
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 15px;
+      border: none;
+      width: 100%;
+      text-align: left
+    }
+    .menuItem-menuActive {
+      background: #00CCBE26;
+
+    }
+    .menuItem {
+      background-color: white;
+    }
+    .sidebar nav button:hover{
+        color: white;
+        background-color: var(--color-primary);
+    }
+    .sidebarFooter {
+      padding: 20px;
+      border-top: 1px solid #e5e7eb
+    }
+    .LogoutButton {
+      width: 100%;
+      background: #14b8a6;
+      color: white;
+      padding: 12px;
+      borderRadius: 8px;
+      border: none;
+      cursor: pointer;
+      fontWeight: 600;
+      fontSize: 15px;
+      transition: all 0.2s;
+      marginBottom: 12px
+    }
+    .sidebarFooter p{
+       line-height: normal;
+    }
+ 
