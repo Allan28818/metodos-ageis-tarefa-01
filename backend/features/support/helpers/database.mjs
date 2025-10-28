@@ -1,4 +1,4 @@
-import mysql from 'mysql2/promise';
+import mysql from "mysql2/promise";
 
 class DatabaseHelper {
   constructor() {
@@ -8,10 +8,10 @@ class DatabaseHelper {
   async connect() {
     if (!this.connection) {
       this.connection = await mysql.createConnection({
-        host: process.env.DB_HOST || 'localhost',
-        user: process.env.DB_USER || 'root',
-        password: process.env.DB_PASSWORD || '',
-        database: process.env.DB_DATABASE_NAME || 'dbEmprestimoLivro'
+        host: process.env.DB_HOST || "localhost",
+        user: process.env.DB_USER || "root",
+        password: process.env.DB_PASSWORD || "",
+        database: process.env.DB_DATABASE_NAME || "dbEmprestimoLivro",
       });
     }
     return this.connection;
@@ -20,7 +20,7 @@ class DatabaseHelper {
   async getUserByEmail(email) {
     const conn = await this.connect();
     const [rows] = await conn.execute(
-      'SELECT id_usuario, email, senha_usuario, nome, telefone FROM usuario WHERE email = ?',
+      "SELECT id_usuario, email, senha_usuario, nome, telefone FROM usuario WHERE email = ?",
       [email]
     );
     return rows[0];
@@ -28,13 +28,13 @@ class DatabaseHelper {
 
   async deleteUserByEmail(email) {
     const conn = await this.connect();
-    await conn.execute('DELETE FROM usuario WHERE email = ?', [email]);
+    await conn.execute("DELETE FROM usuario WHERE email = ?", [email]);
   }
 
   async createUser(userData) {
     const conn = await this.connect();
     const [result] = await conn.execute(
-      'INSERT INTO usuario (nome, senha_usuario, email, telefone) VALUES (?, ?, ?, ?)',
+      "INSERT INTO usuario (nome, senha_usuario, email, telefone) VALUES (?, ?, ?, ?)",
       [userData.nome, userData.senha_usuario, userData.email, userData.telefone]
     );
     return result.insertId;

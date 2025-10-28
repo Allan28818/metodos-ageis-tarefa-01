@@ -1,6 +1,6 @@
-import { setWorldConstructor, Before, After } from '@cucumber/cucumber';
-import * as chai from 'chai';
-import chaiHttp from 'chai-http';
+import { setWorldConstructor, Before, After } from "@cucumber/cucumber";
+import * as chai from "chai";
+import chaiHttp from "chai-http";
 
 chai.use(chaiHttp);
 
@@ -9,7 +9,7 @@ class CustomWorld {
     this.expect = chai.expect;
     this.requestData = {};
     this.response = null;
-    this.baseUrl = 'http://localhost:3000';
+    this.baseUrl = "http://localhost:3000";
     this.database = null;
     this.userId = null;
     this.token = null;
@@ -20,16 +20,16 @@ class CustomWorld {
       const request = chai.request(this.baseUrl);
 
       switch (method.toUpperCase()) {
-        case 'POST':
+        case "POST":
           this.response = await request.post(path).send(data);
           break;
-        case 'GET':
+        case "GET":
           this.response = await request.get(path);
           break;
-        case 'PUT':
+        case "PUT":
           this.response = await request.put(path).send(data);
           break;
-        case 'DELETE':
+        case "DELETE":
           this.response = await request.delete(path);
           break;
         default:

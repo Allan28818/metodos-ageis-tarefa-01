@@ -1,9 +1,9 @@
-import jwt from 'jsonwebtoken';
-import bcrypt from 'bcryptjs';
+import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
 
 class AuthService {
   generateToken(id) {
-    const secret = process.env.SECRET_JWT || 'your-secret-key';
+    const secret = process.env.SECRET_JWT || "your-secret-key";
     return jwt.sign({ id: id }, secret, { expiresIn: 86400 });
   }
 
