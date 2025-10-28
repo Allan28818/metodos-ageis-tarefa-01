@@ -1,6 +1,6 @@
-const { Given, When, Then } = require('@cucumber/cucumber');
-const database = require('../support/helpers/database');
-const bcrypt = require('bcryptjs');
+import { Given, When, Then } from '@cucumber/cucumber';
+import database from '../support/helpers/database.mjs';
+import bcrypt from 'bcryptjs';
 
 // DADOS DE USUÁRIO
 Given('que eu tenho os seguintes dados de usuário:', function (dataTable) {

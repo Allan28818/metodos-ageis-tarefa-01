@@ -1,6 +1,7 @@
-const { Given, When, Then } = require('@cucumber/cucumber');
-const jwt = require('jsonwebtoken');
-const authService = require('../../src/services/auth.service');
+import { Given, When, Then } from '@cucumber/cucumber';
+import { jwt, authService } from '../support/services-wrapper.mjs';
+import bcrypt from 'bcryptjs';
+import database from '../support/helpers/database.mjs';
 
 // SETUP
 Given('que o sistema está configurado com SECRET_JWT', function () {
@@ -211,8 +212,6 @@ Then('o tipo deve ser {string}', function (type) {
 
 // LOGIN E TOKEN
 Given('que existe um usuário cadastrado com email {string} e senha {string}', async function (email, password) {
-  const database = require('../support/helpers/database');
-  const bcrypt = require('bcryptjs');
 
   await database.deleteUserByEmail(email);
 

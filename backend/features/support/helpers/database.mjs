@@ -1,4 +1,4 @@
-const mysql = require('mysql2/promise');
+import mysql from 'mysql2/promise';
 
 class DatabaseHelper {
   constructor() {
@@ -42,7 +42,6 @@ class DatabaseHelper {
 
   async clearTestUsers() {
     const conn = await this.connect();
-    // Limpa apenas usuários de teste (com emails de teste)
     await conn.execute(
       "DELETE FROM usuario WHERE email LIKE '%@email.com' OR email LIKE '%teste%' OR email LIKE '%test%'"
     );
@@ -56,4 +55,4 @@ class DatabaseHelper {
   }
 }
 
-module.exports = new DatabaseHelper();
+export default new DatabaseHelper();

@@ -1,7 +1,7 @@
-const { Given, When, Then } = require('@cucumber/cucumber');
-const database = require('../support/helpers/database');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+import { Given, When, Then } from '@cucumber/cucumber';
+import database from '../support/helpers/database.mjs';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 
 // SETUP DE USUÁRIO EXISTENTE
 Given('existe um usuário cadastrado com os seguintes dados:', async function (dataTable) {

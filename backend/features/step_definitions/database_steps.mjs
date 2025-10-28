@@ -1,6 +1,7 @@
-const { Given, When, Then, Before, After } = require('@cucumber/cucumber');
-const database = require('../support/helpers/database');
-const mysql = require('mysql2/promise');
+import { Given, When, Then, Before, After } from '@cucumber/cucumber';
+import database from '../support/helpers/database.mjs';
+import bcrypt from 'bcryptjs';
+import mysql from 'mysql2/promise';
 
 // LIMPEZA ANTES DOS TESTES
 Before({ tags: '@database' }, async function () {
@@ -109,7 +110,6 @@ Then('as configurações devem incluir host, user, password e database', functio
 
 // OPERAÇÕES DE BUSCA
 Given('que existe um usuário com email {string} no banco', async function (email) {
-  const bcrypt = require('bcryptjs');
 
   await database.deleteUserByEmail(email);
 
@@ -129,7 +129,6 @@ Given('que não existe usuário com email {string}', async function (email) {
 });
 
 Given('que existe um usuário no banco', async function () {
-  const bcrypt = require('bcryptjs');
   const email = 'teste@email.com';
 
   await database.deleteUserByEmail(email);
@@ -272,7 +271,6 @@ Given('que o sistema cria um novo usuário', function () {
 });
 
 When('o sistema executa create\\(user)', async function () {
-  const bcrypt = require('bcryptjs');
 
   await database.deleteUserByEmail(this.testEmail);
 
@@ -286,7 +284,6 @@ When('o sistema executa create\\(user)', async function () {
 });
 
 When('o sistema executa a query INSERT', async function () {
-  const bcrypt = require('bcryptjs');
 
   await database.deleteUserByEmail(this.testEmail);
 
@@ -300,7 +297,6 @@ When('o sistema executa a query INSERT', async function () {
 });
 
 When('a query INSERT é executada', async function () {
-  const bcrypt = require('bcryptjs');
 
   const hashedPassword = await bcrypt.hash(this.userData.senha, 10);
   this.insertResult = await database.createUser({
@@ -533,7 +529,6 @@ Then('deve usar DB_DATABASE_NAME se definido', function () {
 
 // DADOS APÓS INSERÇÃO
 Given('que um usuário foi criado com senha {string}', async function (password) {
-  const bcrypt = require('bcryptjs');
   this.testEmail = 'teste' + Date.now() + '@email.com';
   this.plainPassword = password;
 
@@ -549,7 +544,6 @@ Given('que um usuário foi criado com senha {string}', async function (password)
 });
 
 Given('que eu crio um usuário com nome {string}', async function (nome) {
-  const bcrypt = require('bcryptjs');
   this.testEmail = 'teste' + Date.now() + '@email.com';
   this.userName = nome;
 
@@ -565,7 +559,6 @@ Given('que eu crio um usuário com nome {string}', async function (nome) {
 });
 
 Given('que eu crio um novo usuário válido', async function () {
-  const bcrypt = require('bcryptjs');
   this.testEmail = 'teste' + Date.now() + '@email.com';
 
   await database.deleteUserByEmail(this.testEmail);

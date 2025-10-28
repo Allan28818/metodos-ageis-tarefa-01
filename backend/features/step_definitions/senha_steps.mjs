@@ -1,7 +1,6 @@
-const { Given, When, Then } = require('@cucumber/cucumber');
-const bcrypt = require('bcryptjs');
-const database = require('../support/helpers/database');
-const authService = require('../../src/services/auth.service');
+import { Given, When, Then } from '@cucumber/cucumber';
+import database from '../support/helpers/database.mjs';
+import { bcrypt, authService } from '../support/services-wrapper.mjs';
 
 // SETUP
 Given('que a biblioteca bcrypt está disponível', function () {

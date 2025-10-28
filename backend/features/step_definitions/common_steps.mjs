@@ -1,5 +1,5 @@
-const { Given, When, Then } = require('@cucumber/cucumber');
-const database = require('../support/helpers/database');
+import { Given, When, Then } from '@cucumber/cucumber';
+import database from '../support/helpers/database.mjs';
 
 // CONTEXTO COMUM
 Given('que a API está rodando em {string}', function (url) {
@@ -18,6 +18,10 @@ When('eu envio uma requisição POST para {string}', async function (path) {
     // Guardar erro para verificações posteriores
     this.response = error.response;
   }
+});
+
+Given('que eu não envio nenhum dado no corpo da requisição', function () {
+  this.requestData = {};
 });
 
 When('eu não envio nenhum dado no corpo da requisição', function () {

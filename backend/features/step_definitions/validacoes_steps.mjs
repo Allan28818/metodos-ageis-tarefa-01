@@ -1,4 +1,4 @@
-const { Given, When, Then } = require('@cucumber/cucumber');
+import { Given, When, Then } from '@cucumber/cucumber';
 
 // VALIDAÇÕES GENÉRICAS
 Given('que eu envio uma requisição de registro sem campos obrigatórios', function () {

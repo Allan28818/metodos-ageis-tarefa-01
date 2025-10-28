@@ -1,0 +1,19 @@
+{
+  "default": {
+    "requireModule": ["dotenv/config"],
+    "import": [
+      "features/step_definitions/**/*.mjs",
+      "features/support/**/*.mjs"
+    ],
+    "format": [
+      "progress-bar",
+      "html:features/reports/cucumber-report.html",
+      "json:features/reports/cucumber-report.json"
+    ],
+    "formatOptions": {
+      "snippetInterface": "async-await"
+    },
+    "publishQuiet": true,
+    "requireModule": ["@babel/register"]
+  }
+}
