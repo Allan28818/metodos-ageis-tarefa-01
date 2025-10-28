@@ -16,7 +16,9 @@
     "test:senha": "cucumber-js features/04_seguranca_senhas.feature",
     "test:validacoes": "cucumber-js features/05_validacoes_erros.feature",
     "test:database": "cucumber-js features/06_operacoes_banco_dados.feature",
-    "test:seguranca": "cucumber-js --tags @seguranca"
+    "test:seguranca": "cucumber-js --tags @seguranca",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
