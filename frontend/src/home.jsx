@@ -10,8 +10,15 @@ export default function Home() {
   const [filtroSelecionado, setFiltroSelecionado] = useState("todos");
   const [busca, setBusca] = useState("");
   const livros = BookStorageHelper.getBooks();
+  const [filteredBooks, setFilteredBooks] = useState([])
 
-  const handleBuscar = () => {};
+  const handleBuscar = () => {
+    console.log("buscando")
+    setFilteredBooks(BookStorageHelper.getSearchWithFilter(
+    busca,
+    filtroSelecionado
+  ))
+  };
 
   const handleSolicitar = (livro) => {
     console.log("Solicitar empréstimo:");
@@ -25,64 +32,68 @@ export default function Home() {
     }
   }, []);
 
-  const filteredBooks = BookStorageHelper.getSearchWithFilter(
-    busca,
-    filtroSelecionado
-  );
+   
 
   return (
     <>
       <MenuSidebar pageAtive={"Início"} />
       <div className="main-container">
         {/* Barra de Busca */}
-        <div className="searchBar">
           <input
+          className="searchInput"
             type="text"
-            placeholder="Pesquise por título, autor ou editora"
+            placeholder="Buscar por título, autor ou palavra-chave..."
             value={busca}
             onChange={(e) => setBusca(e.target.value)}
           />
-          <button onClick={handleBuscar}>Buscar</button>
-        </div>
-
-        {/* Filtro */}
-        <div className="styles.filterSection">
+          {/* Filtro */}
+        <div className="searchBar">
+        <div className="filterSection">
           <label className="filterLabel">Filtrar por:</label>
           <select
             value={filtroSelecionado}
             onChange={(e) => setFiltroSelecionado(e.target.value)}
-            className="styles.select"
+            className="select"
           >
             <option value="todos">Todos os matérias</option>
-            <option value="exatas">Ciências Exatas</option>
-            <option value="humanas">Ciências Humanas</option>
-            <option value="engenharias">Engenharias</option>
-            <option value="linguistica">Linguística e Letras</option>
+            <option value="Ciências Exatas">Ciências Exatas</option>
+            <option value="Ciências Humanas">Ciências Humanas</option>
+            <option value="Engenharias">Engenharias</option>
+            <option value="Linguística e Letras">Linguística e Letras</option>
           </select>
         </div>
+          <button 
+          onClick={handleBuscar}
+          className="searchButton"
+          >
+            Buscar
+            </button>
+        </div>
+
+        
 
         {/* Grid de Livros */}
         <div className="livrosGrid">
-          {(busca.length > 0 ? filteredBooks : livros).map((livro) => (
-            <div key={livro.id} className="styles.livroCard">
-              <div className="styles.livroImagem">📚</div>
-              <div className="styles.livroTitulo">{livro.titulo}</div>
-              <div className="styles.livroSubtitulo">{livro.autor}</div>
-              <div className="styles.livroInfo">
-                {livro.categoria.join(", ")}
+          {(busca.length > 0  || filtroSelecionado !== "todos"? filteredBooks : livros).map((livro) => (
+            <div key={livro.id} className="livroCard">
+              <div className="livroImagem"></div>
+              <div className="details">
+              <div className="livroTitulo">{livro.titulo}</div>
+              <div className="livroSubtitulo">{livro.autor}</div>
+              <div className="livroInfo">
+                {livro.categoria.map((categoria) =>(
+                  <span>{categoria}</span>
+                ))}
               </div>
               <button
                 onClick={() => handleSolicitar(livro)}
-                className="styles.botaoSolicitar"
-                onMouseOver={(e) =>
-                  (e.currentTarget.style.background = "#0d9488")
-                }
-                onMouseOut={(e) =>
-                  (e.currentTarget.style.background = "#14b8a6")
-                }
-              >
+                className="botaoSolicitar">
                 Solicitar Empréstimo
               </button>
+              <div className="link">
+                <a href="/book-detail">Ver detalhes</a>
+              </div>
+              </div>
             </div>
           ))}
         </div>

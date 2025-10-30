@@ -42,17 +42,8 @@ export const BookStorageHelper = {
       return BookStorageHelper.books;
     }
 
-    const categoriaMap = {
-      exatas: "Ciências Exatas",
-      humanas: "Ciências Humanas",
-      engenharias: "Engenharias",
-      linguistica: "Linguística e Letras",
-    };
-
-    const categoriaBusca = categoriaMap[filtro];
-
     return BookStorageHelper.books.filter((book) =>
-      book.categoria.includes(categoriaBusca)
+      book.categoria.includes(filtro)
     );
   },
 
@@ -63,7 +54,7 @@ export const BookStorageHelper = {
     if (filtro !== "todos") {
       resultado = BookStorageHelper.getByFilter(filtro);
     }
-
+    console.log(resultado)
     // Aplica busca por texto
     if (search && search.length > 0) {
       resultado = resultado.filter(

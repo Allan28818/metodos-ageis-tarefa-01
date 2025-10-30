@@ -1,17 +1,20 @@
 .main-container {
   display: flex;
-
-  background-color: #f9fafb;
+  flex-direction: column;
   padding: 24px;
   margin-left: 280px;
+  height: 100%;
+
 }
 .header {
-  marginbottom: 24px;
+  margin-bottom: 24px;
 }
 .searchBar {
   display: flex;
   gap: 12px;
   margin-bottom: 24px;
+  align-items: center;
+
 }
 .searchInput {
   flex: 1;
@@ -23,78 +26,85 @@
 }
 .searchButton {
   padding: 12px 24px;
-  background: #14b8a6;
+  background: var(--color-primary);
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
   transition: all 0.2s;
-
+}
   .filterSection {
+    flex: 1;
     margin-bottom: 24px;
+
   }
-  .filterLabel {
-    font-size: 14px;
-    color: #374151;
-    margin-bottom: 8px;
-    display: block;
-    font-weight: 500;
-  }
-  .select {
-    width: 300px;
+  .filterSection select{
+    width: 100%;
     padding: 12px 16px;
     border: 1px solid #e5e7eb;
     border-radius: 8px;
     font-size: 14px;
-    outline: none;
-    background: white;
-    cursor: pointer;
+
+  }
+  .filterLabel {
+    font-size: 14px;
+    color: var(--color-primary);
+    margin: 8px;
+    display: block;
+    font-weight: 500;
   }
   .livrosGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-    margin-bottom: 40px;
+    display: flex;
+    gap: 16px;
+    overflow-x: scroll;
+    padding-bottom: 10px;
   }
-  .livroCard {
-    background: white;
+
+  .livroCard{
+    background-color: white;
     border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 2px 8px black;
+    box-shadow: 0 2px 8px #0000002f;
     cursor: pointer;
+    width: 230px;
+    height: 420px;
   }
   .livroImagem {
-    width: 100%;
-    height: 160px;
-    background: linear-gradient(135deg #e0f2f1 0% #b2dfdb 100%);
-    border-radius: 8px;
-    margin-bottom: 12px;
+    width: 230px;
+    height: 215px;
+    background-color: #00CCBE26;
+    border-radius: 12px 12px 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 48px;
   }
-  .livro-Titulo {
-    fontsize: 15px;
-    fontweight: 600;
-    color: #1f2937;
-    marginbottom: 4px;
+  .livroTitulo {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1C1C1E;
+    margin-bottom: 4px;
   }
-  .livro-Subtitulo {
-    fontsize: 13px;
-    color: #6b7280;
-    marginbottom: 8px;
+  .livroSubtitulo {
+    font-size: 14px;
+    font-weight: 400;
+    color: #1C1C1E;
+    margin-bottom: 8px;
   }
-  .livro-Info {
-    font-size: 12px;
-    color: #9ca3af;
-    margin-bottom: 2px;
+  .livroInfo {
+    font-size: 14px;
+    font-weight: 400;
+    color: #1C1C1E;
+    margin-bottom: 4px;
+  }
+  .livroInfo span{
+    padding: 5px;
+    background-color: #00000012;
   }
   .botaoSolicitar {
     width: 100%;
     padding: 10px;
-    background: #14b8a6;
+    background-color: var(--color-secondary);
     color: white;
     border: none;
     border-radius: 6px;
@@ -102,6 +112,15 @@
     font-weight: 600;
     cursor: pointer;
     margin-top: 12px;
-    transition: all 0.2s;
+
   }
-}
+  .details{
+    padding: 8px;
+
+  }
+  .details .link{
+    text-align: center;
+    margin-top: 8px;
+    font-size: 14px;
+  }
+

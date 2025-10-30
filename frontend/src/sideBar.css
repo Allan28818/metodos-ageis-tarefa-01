@@ -5,12 +5,13 @@
       box-shadow: 1px 1px 10px #00000017;
       display: flex;
       flex-Direction: column;
-      position: absolute;
+      position: fixed;
       margin: 0;
       padding: 15px;
       top: -15px;
       left:-16px;
       border-radius: 0 15px 15px;
+      
 
     }
     header {
