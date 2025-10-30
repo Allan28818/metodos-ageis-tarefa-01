@@ -3,30 +3,58 @@ export const BookStorageHelper = {
     {
       id: 1,
       titulo: "Introdução à Informática",
-      autor: "Vera da Gama",
-      categoria: ["Ciências Exatas"],
+      autor: "Maria dos Santos",
+      categoria: ["Estatística", "Python"],
+      descrição:
+        "Este exemplar é muito bom para quem está querendo começar a entender os conceitos de estatística e como aplicá-los na linguagem Python. Possui uma linguagem clara e simples, o que facilita muito na aprendizagem de quem tá começando no mundo dos dados.",
       disponivel: true,
+      postBy: "Felipe Rodrigues",
     },
     {
       id: 2,
       titulo: "Programando com Python",
       autor: "João Almeida",
-      categoria: ["Engenharias"],
+      categoria: ["Python"],
+      descrição: "lorem",
       disponivel: true,
+      postBy: "Felipe Rodrigues",
     },
     {
       id: 3,
       titulo: "Gramática Aplicada",
-      autor: "Ciça Oliveira",
-      categoria: ["Engenharias"],
+      autor: "Clara Ramos",
+      categoria: ["Língua Portuguesa", "Escrita"],
+      descrição: "lorem",
       disponivel: true,
+      postBy: "Felipe Rodrigues",
     },
     {
       id: 4,
-      titulo: "Gramática Aplicada",
-      autor: "Ciça Oliveira",
-      categoria: ["Linguística e Letras"],
+      titulo: "Introdução à Informática",
+      autor: "Maria dos Santos",
+      categoria: ["Estatística", "Python"],
+      descrição:
+        "Este exemplar é muito bom para quem está querendo começar a entender os conceitos de estatística e como aplicá-los na linguagem Python. Possui uma linguagem clara e simples, o que facilita muito na aprendizagem de quem tá começando no mundo dos dados.",
       disponivel: true,
+      postBy: "Felipe Rodrigues",
+    },
+    {
+      id: 5,
+      titulo: "Programando com Python",
+      autor: "João Almeida",
+      categoria: ["Python"],
+      descrição: "lorem",
+      disponivel: true,
+      postBy: "Felipe Rodrigues",
+    },
+    {
+      id: 6,
+      titulo: "Gramática Aplicada",
+      autor: "Clara Ramos",
+      categoria: ["Língua Portuguesa", "Escrita"],
+      descrição: "lorem",
+      disponivel: true,
+      postBy: "Felipe Rodrigues",
     },
   ],
   saveBook: (bookData) => {
@@ -35,6 +63,18 @@ export const BookStorageHelper = {
 
   getBooks: () => {
     return BookStorageHelper.books;
+  },
+
+  getOneBook: (index) => {
+    return BookStorageHelper.books.find((book) => book.id === index);
+  },
+
+  getCategorias: () => {
+    const todasCategorias = BookStorageHelper.books.flatMap(
+      (book) => book.categoria
+    ); // junta todas as listas
+    const unicas = [...new Set(todasCategorias)]; // remove duplicadas
+    return unicas;
   },
 
   getByFilter(filtro) {
@@ -54,7 +94,7 @@ export const BookStorageHelper = {
     if (filtro !== "todos") {
       resultado = BookStorageHelper.getByFilter(filtro);
     }
-    console.log(resultado)
+    console.log(resultado);
     // Aplica busca por texto
     if (search && search.length > 0) {
       resultado = resultado.filter(

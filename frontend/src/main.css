@@ -4,7 +4,6 @@
   padding: 24px;
   margin-left: 280px;
   height: 100%;
-
 }
 .header {
   margin-bottom: 24px;
@@ -14,7 +13,6 @@
   gap: 12px;
   margin-bottom: 24px;
   align-items: center;
-
 }
 .searchInput {
   flex: 1;
@@ -34,93 +32,94 @@
   font-weight: 600;
   transition: all 0.2s;
 }
-  .filterSection {
-    flex: 1;
-    margin-bottom: 24px;
+.filterSection {
+  flex: 1;
+  margin-bottom: 24px;
+}
+.filterSection select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.filterLabel {
+  font-size: 14px;
+  color: var(--color-primary);
+  margin: 8px;
+  display: block;
+  font-weight: 500;
+}
+.livrosGrid {
+  display: flex;
+  gap: 16px;
+  overflow-x: scroll;
+  padding-bottom: 10px;
+}
 
-  }
-  .filterSection select{
-    width: 100%;
-    padding: 12px 16px;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    font-size: 14px;
+.livroCard {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0000002f;
+  cursor: pointer;
+  width: 230px;
+  height: 420px;
+}
+.livroImagem {
+  width: 230px;
+  height: 215px;
+  background-color: #00ccbe26;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+.livroTitulo {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1c1c1e;
+  margin-bottom: 4px;
+}
+.livroSubtitulo {
+  font-size: 14px;
+  font-weight: 400;
+  color: #1c1c1e;
+  margin-bottom: 8px;
+}
+.livroInfo {
+  font-size: 14px;
+  font-weight: 400;
+  color: #1c1c1e;
+  margin-bottom: 4px;
+}
+.livroInfo span {
+  padding: 5px;
+  margin: 4px;
+  background-color: #00000012;
+}
+.botaoSolicitar {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--color-secondary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 12px;
+}
+.details {
+  padding: 8px;
+}
+.details .link {
+  text-align: center;
 
-  }
-  .filterLabel {
-    font-size: 14px;
-    color: var(--color-primary);
-    margin: 8px;
-    display: block;
-    font-weight: 500;
-  }
-  .livrosGrid {
-    display: flex;
-    gap: 16px;
-    overflow-x: scroll;
-    padding-bottom: 10px;
-  }
-
-  .livroCard{
+  button {
     background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px #0000002f;
-    cursor: pointer;
-    width: 230px;
-    height: 420px;
-  }
-  .livroImagem {
-    width: 230px;
-    height: 215px;
-    background-color: #00CCBE26;
-    border-radius: 12px 12px 0 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 48px;
-  }
-  .livroTitulo {
-    font-size: 16px;
-    font-weight: 500;
-    color: #1C1C1E;
-    margin-bottom: 4px;
-  }
-  .livroSubtitulo {
-    font-size: 14px;
-    font-weight: 400;
-    color: #1C1C1E;
-    margin-bottom: 8px;
-  }
-  .livroInfo {
-    font-size: 14px;
-    font-weight: 400;
-    color: #1C1C1E;
-    margin-bottom: 4px;
-  }
-  .livroInfo span{
-    padding: 5px;
-    background-color: #00000012;
-  }
-  .botaoSolicitar {
-    width: 100%;
-    padding: 10px;
-    background-color: var(--color-secondary);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 12px;
-
-  }
-  .details{
-    padding: 8px;
-
-  }
-  .details .link{
-    text-align: center;
+    color: var(--color-primary);
     margin-top: 8px;
     font-size: 14px;
   }
-
+}
